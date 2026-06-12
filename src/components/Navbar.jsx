@@ -3,42 +3,64 @@ import { useLocale } from "@/contexts/LocaleContext";
 import { LOCALE_META, SUPPORTED_LOCALES } from "@/data/translations";
 import { TESTIDS } from "@/constants/testIds";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
+
 import {
   DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Globe, Menu, X, ChevronDown } from "lucide-react";
-import companyLogo from "@/assets/logo.png";
 
 export default function Navbar({ onOpenDemo }) {
   const { t, locale, setLocale } = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { id: TESTIDS.navLinkFeatures, label: t("nav.features"), href: "#features" },
-    { id: TESTIDS.navLinkIndustries, label: t("nav.industries"), href: "#industries" },
-    { id: TESTIDS.navLinkPricing, label: t("nav.pricing"), href: "#pricing" },
-    { id: TESTIDS.navLinkBlog, label: t("nav.blog"), href: "#blog" },
+    { id: TESTIDS.navLinkFeatures, label: t("nav.features"), href: "/#features" },
+    { id: TESTIDS.navLinkIndustries, label: t("nav.industries"), href: "/#industries" },
+    { id: TESTIDS.navLinkPricing, label: t("nav.pricing"), href: "/#pricing" },
+    { id: TESTIDS.navLinkCompare, label: t("nav.compare"), href: "/compare" },
+    { id: TESTIDS.navLinkBlog, label: t("nav.blog"), href: "/#blog" },
   ];
 
   return (
     <header
       data-testid={TESTIDS.nav}
-      className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-xl"
+      className="fixed top-4 left-0 right-0 z-50 px-4"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+      <div
+        className="
+          mx-auto
+          max-w-6xl
+          h-16
+          px-6
+          flex
+          items-center
+          justify-between
+
+          rounded-full
+
+          border
+          border-white/20
+
+          bg-white/60
+          backdrop-blur-2xl
+
+          shadow-[0_8px_32px_rgba(0,0,0,0.08)]
+
+          supports-[backdrop-filter]:bg-white/50
+        "
+      >
         {/* Brand */}
         <a
           data-testid={TESTIDS.brand}
           href="#top"
-          className="flex items-center gap-2 group"
+          className="flex items-center"
         >
-          <span className="relative inline-flex items-center">
-            <img
-              src={companyLogo}
-              alt="Company Logo"
-              className="h-10 w-auto"
-            />
-          </span>
+          <img
+            src={logo}
+            alt="Company Logo"
+            className="h-10 w-auto object-contain"
+          />
         </a>
 
         {/* Center links — desktop */}
@@ -48,7 +70,20 @@ export default function Navbar({ onOpenDemo }) {
               key={l.id}
               data-testid={l.id}
               href={l.href}
-              className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-[color:var(--aw-primary)] transition-colors rounded-md"
+              className="
+                px-4
+                py-2
+                text-sm
+                font-medium
+                text-slate-700
+
+                rounded-full
+
+                hover:bg-white/70
+                hover:text-[color:var(--aw-primary)]
+
+                transition-all
+              "
             >
               {l.label}
             </a>
@@ -88,7 +123,23 @@ export default function Navbar({ onOpenDemo }) {
           <Button
             data-testid={TESTIDS.navCtaPrimary}
             onClick={onOpenDemo}
-            className="hidden sm:inline-flex rounded-lg px-4 h-9 font-semibold text-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+            className="
+              hidden
+              sm:inline-flex
+
+              rounded-full
+
+              px-5
+              h-10
+
+              font-semibold
+              text-white
+
+              shadow-lg
+
+              hover:scale-105
+              transition-all
+            "
             style={{ background: "var(--aw-primary)" }}
           >
             {t("nav.cta")}

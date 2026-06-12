@@ -31,21 +31,6 @@ export default function Hero({ onOpenDemo }) {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Left column */}
           <div className="lg:col-span-6">
-            {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-semibold tracking-wide"
-              style={{
-                borderColor: "rgba(0,135,68,0.25)",
-                color: "var(--aw-primary)",
-                background: "rgba(0,135,68,0.06)",
-              }}
-            >
-              <Sparkles className="w-3.5 h-3.5" />
-              {t("hero.eyebrow")}
-            </motion.div>
 
             {/* Headline */}
             <motion.h1

@@ -31,9 +31,24 @@ export const TESTIDS = {
   comparison: "comparison-matrix",
   comparisonRow: (key) => `comparison-row-${key}`,
 
+  // Compare page
+  compare: "compare-page",
+  compareMatrix: "compare-matrix",
+  compareMatrixRow: (key) => `compare-matrix-row-${key}`,
+  compareCard: (slug) => `compare-card-${slug}`,
+  compareCardCta: (slug) => `compare-card-cta-${slug}`,
+  compareCtaPrimary: "compare-cta-primary",
+  navLinkCompare: "nav-link-compare",
+
   // Testimonials
   testimonials: "testimonials-section",
   testimonialCard: (i) => `testimonial-card-${i}`,
+
+  // FAQ
+  faq: "faq-section",
+  faqItem: (i) => `faq-item-${i}`,
+  faqTrigger: (i) => `faq-trigger-${i}`,
+  faqCta: "faq-cta",
 
   // Demo form
   demoForm: "demo-form",

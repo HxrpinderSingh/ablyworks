@@ -2,7 +2,7 @@ import React from "react";
 import { useLocale } from "@/contexts/LocaleContext";
 import { TESTIDS } from "@/constants/testIds";
 import { ShieldCheck, Cookie, Lock, FileText } from "lucide-react";
-import companyLogo from "@/assets/logo.png";
+import logo from "@/assets/logo.png";
 
 export default function Footer() {
   const { t, raw, locale } = useLocale();
@@ -25,9 +25,9 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-2">
             <div className="flex items-center gap-2">
               <img
-                src={companyLogo}
+                src={logo}
                 alt="Company Logo"
-                className="h-10 w-auto"
+                className="h-10 w-auto object-contain"
               />
             </div>
             <p className="mt-4 text-sm text-white/70 leading-relaxed max-w-xs">

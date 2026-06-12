@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import BentoFeatures from "@/components/BentoFeatures";
 import ComparisonMatrix from "@/components/ComparisonMatrix";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import DemoForm from "@/components/DemoForm";
 
@@ -19,6 +20,7 @@ export default function Landing() {
         <BentoFeatures />
         <ComparisonMatrix />
         <Testimonials />
+        <FAQ onOpenDemo={openDemo} />
       </main>
       <Footer />
       <DemoForm open={demoOpen} onOpenChange={setDemoOpen} />
