@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --aw-primary: #008744;
+    --aw-primary-hover: #006834;
+    --aw-primary-tint: rgba(0, 135, 68, 0.08);
+    --aw-heading: #1E293B;
+    --aw-body: #334155;
+    --aw-muted: #64748B;
+    --aw-bg: #FFFFFF;
+    --aw-card: #F8FAFC;
+    --aw-border: #E2E8F0;
+    --aw-dark: #022C22;
+}
+
+body {
+    margin: 0;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: var(--aw-body);
+    background: var(--aw-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    color: var(--aw-heading);
+    letter-spacing: -0.02em;
+}
+
+::selection {
+    background: rgba(0, 135, 68, 0.18);
+    color: var(--aw-heading);
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 215 28% 17%;
+        --card: 0 0% 100%;
+        --card-foreground: 215 28% 17%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 215 28% 17%;
+        --primary: 148 100% 26%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 215 28% 17%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 148 100% 26%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 148 100% 26%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Pipeline animation */
+@keyframes aw-pipeline-flow {
+    0%   { transform: translateY(0) scale(1); opacity: 1; }
+    45%  { transform: translateY(0) scale(1); opacity: 1; }
+    50%  { transform: translateY(-8px) scale(1.02); opacity: 0.6; }
+    55%  { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes aw-pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(1.5); }
+}
+
+@keyframes aw-shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes aw-progress-fill {
+    from { width: 0%; }
+    to   { width: var(--target, 80%); }
+}
+
+.aw-grid-bg {
+    background-image:
+        linear-gradient(rgba(2, 44, 34, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 44, 34, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+.aw-dark-tint {
+    background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(0,135,68,0.10), transparent 70%),
+        radial-gradient(900px 500px at 100% 80%, rgba(0,135,68,0.08), transparent 70%),
+        #022C22;
+}
+
+.aw-soft-green {
+    background:
+        radial-gradient(800px 400px at 80% 0%, rgba(0,135,68,0.06), transparent 70%),
+        #F4FBF7;
+}
