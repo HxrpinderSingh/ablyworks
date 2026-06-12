@@ -2,6 +2,7 @@ import React from "react";
 import { useLocale } from "@/contexts/LocaleContext";
 import { TESTIDS } from "@/constants/testIds";
 import { ShieldCheck, Cookie, Lock, FileText } from "lucide-react";
+import companyLogo from "@/assets/logo.png";
 
 export default function Footer() {
   const { t, raw, locale } = useLocale();
@@ -23,12 +24,10 @@ export default function Footer() {
           {/* Brand block */}
           <div className="col-span-2 md:col-span-2">
             <div className="flex items-center gap-2">
-              <span className="text-xl font-bold tracking-tight text-white" style={{ fontFamily: "Outfit" }}>
-                AblyWorks
-              </span>
-              <span
-                className="inline-block w-2 h-2 rounded-full"
-                style={{ background: "var(--aw-primary)", boxShadow: "0 0 0 3px rgba(0,135,68,0.25)" }}
+              <img
+                src={companyLogo}
+                alt="Company Logo"
+                className="h-10 w-auto"
               />
             </div>
             <p className="mt-4 text-sm text-white/70 leading-relaxed max-w-xs">

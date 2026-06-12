@@ -7,6 +7,7 @@ import {
   DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Globe, Menu, X, ChevronDown } from "lucide-react";
+import companyLogo from "@/assets/logo.png";
 
 export default function Navbar({ onOpenDemo }) {
   const { t, locale, setLocale } = useLocale();
@@ -32,13 +33,10 @@ export default function Navbar({ onOpenDemo }) {
           className="flex items-center gap-2 group"
         >
           <span className="relative inline-flex items-center">
-            <span className="text-[1.35rem] font-bold tracking-tight" style={{ fontFamily: "Outfit", color: "var(--aw-heading)" }}>
-              AblyWorks
-            </span>
-            <span
-              aria-hidden="true"
-              className="ml-1 inline-block w-2 h-2 rounded-full"
-              style={{ background: "var(--aw-primary)", boxShadow: "0 0 0 3px rgba(0,135,68,0.18)" }}
+            <img
+              src={companyLogo}
+              alt="Company Logo"
+              className="h-10 w-auto"
             />
           </span>
         </a>
